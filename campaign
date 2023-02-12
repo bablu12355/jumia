@@ -1,0 +1,21 @@
+public void validateMultipleSelected(WebElement we, String elementName) {
+		try {
+			boolean checkElement = checkElement(we, elementName);
+			if (checkElement == true) {
+				Select select = new Select(we);
+				boolean multipleSelect = select.isMultiple();
+				if (multipleSelect == true) {
+					extt.log(Status.PASS,MarkupHelper.createLabel(elementName + "is multiple Selected option validate Pass" + multipleSelect,ExtentColor.PINK));
+				} else {
+					extt.log(Status.FAIL,MarkupHelper.createLabel(elementName + "is multiple Selected option validate failed" + multipleSelect,ExtentColor.PINK));
+				}
+			}
+		} catch (NoSuchElementException e) {
+			SnapShot("SnapshotIsMultiple");
+			e.printStackTrace();
+		} catch (Exception e) {
+			SnapShot("SnapshotIsMultiple");
+			e.printStackTrace();
+		}
+	}
+}
