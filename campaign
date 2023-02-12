@@ -19,3 +19,14 @@ public void validateMultipleSelected(WebElement we, String elementName) {
 		}
 	}
 }
+public void HandleAlertAccept() {
+		try {
+			driver.switchTo().alert().accept();
+		} catch (UnhandledAlertException e) {
+			e.printStackTrace();
+
+		} catch (Exception e) {
+			SnapShot("HandleAlertAccept");
+			e.printStackTrace();
+		}
+	}
