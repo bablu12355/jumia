@@ -12,3 +12,16 @@
 		}
 
 	}
+public void HandleAlertSendKeys(WebElement we, String inputvalue) {
+		try {
+//			getWebElementLocatorXpath(locatorvalue, Locatortype);
+			driver.switchTo().alert().sendKeys(inputvalue);
+
+		} catch (NoSuchElementException e) {
+			e.printStackTrace();
+
+		} catch (Exception e) {
+			SnapShot("HandleAlertSendKeys");
+			e.printStackTrace();
+		}
+	}
