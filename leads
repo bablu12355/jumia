@@ -1,0 +1,14 @@
+ */
+	public void getWindowHandles(String expectedTitle) {
+		Set<String> getHandleValue = driver.getWindowHandles();
+		for (String getHandleWindow : getHandleValue) {
+			driver.switchTo().window(getHandleWindow);
+			String actualWindow = driver.getTitle();
+			if (actualWindow.equalsIgnoreCase(expectedTitle)) {
+				break;
+			}
+			extt.log(Status.INFO,MarkupHelper.createLabel(expectedTitle + " is Title switch successfully", ExtentColor.BLUE));
+
+		}
+
+	}
